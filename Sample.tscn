@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Node" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 645.0
+margin_bottom = 393.0
+color = Color( 0.490196, 0.545098, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 114.831
+margin_top = 110.729
+margin_right = 475.831
+margin_bottom = 190.729
+text = "ASPODk AOPSDk paosdkpoASKDopASKdp"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,12 +1,14 @@
 extends Node
 
-var url = "https://script.google.com/a/setmind.com.br/macros/s/AKfycbxr1Wf-LjMPa5kPvvyBlLvLfB4rOHdchp6mpErW/exec"
+var url = "https://script.google.com/a/setmind.com.br/macros/s/AKfycby4h1_nt9QM5-IlEeAo7WdpqBLpIKHSnN7FHGRs/exec"
 #var url = "http://www.json-generator.com/api/json/get/ceIHFlusjm?indent=2"
 var type_of_connection = 0
 var ranking #Updated Ranking
 var new_ranking #New Ranking from request
 var swap_ranking = [] #Array for swap and update the ranking array
 var element = load("res://Elemento/Elemento.tscn")
+
+var last_year_rank = [["Ultron",2595],["Zilla",2573],["Excalibur",2505],["Zebes",2503],["Smaug",2481],["Merlin",2099],["Han Solo",2061],["Tygra",2055],["Arton",2050],["Jango",2047],["Matrix",1986],["Yordle",1912],["Moltres",1910],["Thundera",1891],["Yoda",1729],["Korg",1643],["R2D2",1470],["Bat",1459],["Tatooine",1220]]
 
 var new_req_time = 20 #Tempo do novo request
 
@@ -18,6 +20,8 @@ func _ready():
 	$TimerPos.connect("timeout",self,"TimerPos_time_out")
 	$TimerReq.connect("timeout",self,"TimerReq_time_out")
 	$HTTPRequest.request(url)
+
+
 
 func btn_req_pressed():
 	$HTTPRequest.request(url)
@@ -41,6 +45,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	
 	$Hud/Output.text = ""
 	
+	
 	if arr.size() > 0:
 		for i in arr:
 			$Hud/Output.text += str(i[0],":  ") 
@@ -53,17 +58,28 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if type_of_connection == 1:
 		new_ranking = arr
 	update_ranking(type_of_connection)
+	
 
 func update_ranking(type):
 	$AudioStreamPlayer.play(0)
-	if type == 0:
-		instanciate_elements()
-	if type == 1:
-		reorder_rank()
-
-
-func reorder_rank():
 	
+	var date = OS.get_date()
+	#SetmindCup 2020 24/02/2020
+	
+	if date.month <= 2 and date.day < 23: 
+		if type == 0:
+			instanciate_elements(last_year_rank)
+		if type == 1:
+			reorder_rank(last_year_rank)
+	else:
+		$Art/Title.text = "Setmind Cup 2020"
+		if type == 0:
+			instanciate_elements(ranking)
+		if type == 1:
+			reorder_rank(new_ranking)
+	
+func reorder_rank(rank):
+	new_ranking = rank
 	var camera_focus
 	
 #	swap_ranking.resize( ranking.size() )
@@ -72,8 +88,6 @@ func reorder_rank():
 		if new_ranking[i][0] != ranking[i][0]:
 			swap_ranking[i] = null
 			break
-			
-	print(swap_ranking)
 	
 	#Acha onde deve haver o foco
 	for i in range(swap_ranking.size() ):
@@ -98,7 +112,9 @@ func reorder_rank():
 	print(camera_focus)
 
 
-func instanciate_elements():
+func instanciate_elements(rank):
+	ranking = rank
+	
 	var index = 0
 	for i in ranking:
 		var new_element = element.instance() as Element # Instancia como Elemento
@@ -136,4 +152,6 @@ func TimerReq_time_out():
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.stop()
+	print("Acabei")
+	$AudioStreamPlayer.play_audio()
 	pass # Replace with function body.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Jin.ogg-16950d0853e24189875daa4404f9e0d4.oggstr"
+
+[deps]
+
+source_file="res://Audio/Jin.ogg"
+dest_files=[ "res://.import/Jin.ogg-16950d0853e24189875daa4404f9e0d4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
