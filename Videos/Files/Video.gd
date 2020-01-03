@@ -22,5 +22,5 @@ func _on_VideoPlayer_finished():
 
 
 func play_video():
-	
+	pass
 	

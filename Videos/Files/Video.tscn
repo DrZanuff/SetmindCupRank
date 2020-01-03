@@ -4,7 +4,6 @@
 
 [node name="Videos" type="Node"]
 script = ExtResource( 1 )
-array = null
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 anchor_right = 1.0
