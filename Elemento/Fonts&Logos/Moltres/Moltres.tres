@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Elemento/Fonts&Logos/Moltres/Moltres.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Elemento/Fonts&Logos/Moltres/Moltres.svg" type="Texture" id=2]
+[ext_resource path="res://Elemento/Emblem_Class/Emblem.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[resource]
+script = ExtResource( 3 )
+logo = ExtResource( 2 )
+font = SubResource( 1 )
+font_size = 35.0
+color1 = Color( 1, 0.843137, 0, 1 )
+color2 = Color( 0.858824, 0.282353, 0, 1 )

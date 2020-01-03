@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Loading.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.611765, 0.611765, 0.611765, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.811765, 0.811765, 0.811765, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Loading" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="Pivot1" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Pivot1"]
+margin_left = -7.06921
+margin_top = -26.7401
+margin_right = 6.93079
+margin_bottom = -12.7401
+rect_pivot_offset = Vector2( 6.89536, 7.16402 )
+custom_styles/normal = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="Pivot2" type="Node2D" parent="."]
+rotation = 0.785398
+
+[node name="Label" type="Label" parent="Pivot2"]
+margin_left = -7.06921
+margin_top = -26.7401
+margin_right = 6.93079
+margin_bottom = -12.7401
+rect_pivot_offset = Vector2( 6.89536, 7.16402 )
+custom_styles/normal = SubResource( 2 )
+align = 1
+valign = 1
+
+[node name="Pivot3" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="Label" type="Label" parent="Pivot3"]
+margin_left = -7.06921
+margin_top = -26.7401
+margin_right = 6.93079
+margin_bottom = -12.7401
+rect_pivot_offset = Vector2( 6.89536, 7.16402 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+valign = 1

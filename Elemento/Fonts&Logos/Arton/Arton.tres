@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Elemento/Fonts&Logos/Arton/Arton.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Elemento/Fonts&Logos/Arton/Arton.svg" type="Texture" id=2]
+[ext_resource path="res://Elemento/Emblem_Class/Emblem.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+font_data = ExtResource( 1 )
+
+[resource]
+script = ExtResource( 3 )
+logo = ExtResource( 2 )
+font = SubResource( 1 )
+font_size = 30.0
+color1 = Color( 0, 0.0235294, 0.282353, 1 )
+color2 = Color( 0.694118, 0.0745098, 0.0431373, 1 )

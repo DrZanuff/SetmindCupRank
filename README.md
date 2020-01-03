@@ -1,1 +1,1 @@
-SetmindCupRank
+setmind-cup-score

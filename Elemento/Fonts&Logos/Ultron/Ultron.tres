@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Elemento/Fonts&Logos/Ultron/Ultron.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Elemento/Fonts&Logos/Ultron/Ultron.svg" type="Texture" id=2]
+[ext_resource path="res://Elemento/Emblem_Class/Emblem.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[resource]
+script = ExtResource( 3 )
+logo = ExtResource( 2 )
+font = SubResource( 1 )
+font_size = 30.0
+color1 = Color( 0, 0.741176, 1, 1 )
+color2 = Color( 0.235294, 0.235294, 0.235294, 1 )
