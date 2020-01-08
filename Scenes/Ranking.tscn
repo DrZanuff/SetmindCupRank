@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Loading.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/Matrix2.png" type="Texture" id=3]
-[ext_resource path="res://Camera.gd" type="Script" id=4]
-[ext_resource path="res://Art/Prototype.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Art/move.svg" type="Texture" id=6]
-[ext_resource path="res://Art/WolrdBG.PNG" type="Texture" id=8]
-[ext_resource path="res://Audio/Scenes/AudioStreamPlayer.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Ranking.gd" type="Script" id=1]
+[ext_resource path="res://Audio/Scenes/AudioStreamPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Art/Prototype.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Art/WolrdBG.PNG" type="Texture" id=4]
+[ext_resource path="res://Scenes/Loading.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/Matrix2.png" type="Texture" id=6]
+[ext_resource path="res://Art/move.svg" type="Texture" id=7]
+[ext_resource path="res://Scenes/Camera.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 10.0
@@ -75,14 +75,14 @@ outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 extra_spacing_char = 3
-font_data = ExtResource( 5 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="Gradient" id=7]
 
 [sub_resource type="GradientTexture" id=8]
 gradient = SubResource( 7 )
 
-[node name="Main" type="Node"]
+[node name="Ranking" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
@@ -106,18 +106,20 @@ text = "...
 "
 
 [node name="ColorRect" type="ColorRect" parent="Hud"]
-margin_left = -8.0
-margin_top = -9.0
-margin_right = 1043.0
-margin_bottom = 619.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="Hud/ColorRect"]
-margin_left = 426.989
-margin_top = 288.21
-margin_right = 612.989
-margin_bottom = 310.21
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -11.0
+margin_right = 93.0
+margin_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 91.1831, 7.43433 )
@@ -129,24 +131,24 @@ autoplay = "Start"
 anims/Fade = SubResource( 2 )
 anims/Start = SubResource( 3 )
 
-[node name="Loading" parent="Hud" instance=ExtResource( 2 )]
-position = Vector2( 975.958, 561.03 )
+[node name="Loading" parent="Hud" instance=ExtResource( 5 )]
+position = Vector2( 1147.37, 680.743 )
 
 [node name="BackGround" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="BG" type="Polygon2D" parent="BackGround"]
-texture = ExtResource( 8 )
+texture = ExtResource( 4 )
 texture_offset = Vector2( 0, 9.77 )
-polygon = PoolVector2Array( -25.432, -25.3654, 1079.39, -25.3654, 1079.39, 642.708, -19.8802, 640.857 )
+polygon = PoolVector2Array( -25.432, -25.3654, 1295.05, -15.8953, 1301.87, 736.161, -20.4774, 738.433 )
 
 [node name="Matrix" type="Sprite" parent="BackGround"]
 modulate = Color( 1, 1, 1, 0.52549 )
 material = SubResource( 4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 1024, 600 )
+region_rect = Rect2( 0, 0, 1280, 720 )
 script = SubResource( 5 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
@@ -155,15 +157,14 @@ script = SubResource( 5 )
 position = Vector2( 0.000366211, 5.03464 )
 anchor_mode = 0
 current = true
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="Art" type="Node" parent="."]
 
 [node name="Title" type="Label" parent="Art"]
-margin_left = 109.0
-margin_top = 64.0
-margin_right = 908.0
-margin_bottom = 121.0
+anchor_right = 1.0
+margin_top = 81.0
+margin_bottom = 129.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.94902, 0.509804, 0, 1 )
 custom_constants/shadow_offset_x = 10
@@ -177,23 +178,23 @@ __meta__ = {
 }
 
 [node name="Light2D" type="Light2D" parent="Art"]
-position = Vector2( 509.325, 87.6324 )
+position = Vector2( 633.316, 104.288 )
 rotation = -1.57079
 scale = Vector2( 0.0345664, 388.331 )
 texture = SubResource( 8 )
 
 [node name="Pos" type="Sprite" parent="."]
 visible = false
-position = Vector2( 134, 64 )
+position = Vector2( 255, 64 )
 scale = Vector2( 0.0728836, 0.0728836 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="End" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 94.1011, 64.9227 )
+position = Vector2( 215, 64.923 )
 scale = Vector2( 0.0728836, 0.0728836 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Ranking" type="Node" parent="."]
 
@@ -203,12 +204,11 @@ texture = ExtResource( 6 )
 wait_time = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2( 530.842, 503.444 )
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 10 )
+script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }

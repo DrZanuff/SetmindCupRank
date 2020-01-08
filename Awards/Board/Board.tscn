@@ -1,0 +1,380 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Awards/Board/Board.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Cronus Round.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0, 0, 0, 0.45098 )
+border_width_left = 2
+border_width_top = 5
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.215686 )
+border_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+draw_center = false
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+draw_center = false
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 21
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 19
+outline_color = Color( 0.788235, 0.788235, 0.788235, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "Shuffle"
+length = 2.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Mention:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.1, 1.5, 1.9, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0.913725, 1 ), Color( 0, 0.858824, 1, 1 ), Color( 0.921569, 1, 0, 1 ), Color( 0.266667, 1, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.654902, 0, 1 ) ]
+}
+
+[node name="Board" type="PanelContainer"]
+margin_right = 320.0
+margin_bottom = 609.0
+rect_min_size = Vector2( 320, 600 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 320.0
+margin_bottom = 619.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 619.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="Title" type="Label" parent="Body"]
+margin_right = 320.0
+margin_bottom = 44.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Melhor Jogo"
+align = 1
+valign = 3
+
+[node name="WinnerPhoto" type="TextureRect" parent="Body"]
+margin_top = 60.0
+margin_right = 320.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Winner" type="Label" parent="Body"]
+margin_top = 140.0
+margin_right = 320.0
+margin_bottom = 250.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.843137, 0, 1 )
+text = "Nome do aluno
+Turma: Zebes
+"
+align = 1
+valign = 3
+
+[node name="HSeparator" type="HSeparator" parent="Body"]
+margin_top = 266.0
+margin_right = 320.0
+margin_bottom = 270.0
+
+[node name="Mention" type="Label" parent="Body"]
+margin_top = 286.0
+margin_right = 320.0
+margin_bottom = 330.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Destaques"
+align = 1
+
+[node name="Nominates" type="Label" parent="Body"]
+visible = false
+margin_top = 346.0
+margin_right = 320.0
+margin_bottom = 575.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+text = "Aluno 1
+Turma: Jango
+
+Aluno 2
+Turma: Korg
+
+Aluno 3
+Turma: Ultron"
+align = 1
+
+[node name="Nominiees" type="VBoxContainer" parent="Body"]
+margin_top = 346.0
+margin_right = 320.0
+margin_bottom = 619.0
+size_flags_vertical = 3
+custom_constants/separation = 7
+
+[node name="Nominee1" type="HBoxContainer" parent="Body/Nominiees"]
+margin_right = 320.0
+margin_bottom = 49.0
+custom_constants/separation = 19
+
+[node name="Control" type="Control" parent="Body/Nominiees/Nominee1"]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Photo" type="TextureRect" parent="Body/Nominiees/Nominee1"]
+margin_left = 59.0
+margin_right = 107.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 48, 48 )
+expand = true
+
+[node name="Info" type="VBoxContainer" parent="Body/Nominiees/Nominee1"]
+margin_left = 126.0
+margin_right = 316.0
+margin_bottom = 49.0
+custom_constants/separation = -4
+
+[node name="Nome" type="Label" parent="Body/Nominiees/Nominee1/Info"]
+margin_right = 190.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+
+[node name="Turma" type="Label" parent="Body/Nominiees/Nominee1/Info"]
+margin_top = 24.0
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.713726, 0.713726, 0.713726, 1 )
+align = 1
+
+[node name="Nominee2" type="HBoxContainer" parent="Body/Nominiees"]
+margin_top = 56.0
+margin_right = 320.0
+margin_bottom = 105.0
+custom_constants/separation = 19
+
+[node name="Control" type="Control" parent="Body/Nominiees/Nominee2"]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Photo" type="TextureRect" parent="Body/Nominiees/Nominee2"]
+margin_left = 59.0
+margin_right = 107.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 48, 48 )
+expand = true
+
+[node name="Info" type="VBoxContainer" parent="Body/Nominiees/Nominee2"]
+margin_left = 126.0
+margin_right = 316.0
+margin_bottom = 49.0
+custom_constants/separation = -4
+
+[node name="Nome" type="Label" parent="Body/Nominiees/Nominee2/Info"]
+margin_right = 190.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+
+[node name="Turma" type="Label" parent="Body/Nominiees/Nominee2/Info"]
+margin_top = 24.0
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.713726, 0.713726, 0.713726, 1 )
+align = 1
+
+[node name="Nominee3" type="HBoxContainer" parent="Body/Nominiees"]
+margin_top = 112.0
+margin_right = 320.0
+margin_bottom = 161.0
+custom_constants/separation = 19
+
+[node name="Control" type="Control" parent="Body/Nominiees/Nominee3"]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Photo" type="TextureRect" parent="Body/Nominiees/Nominee3"]
+margin_left = 59.0
+margin_right = 107.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 48, 48 )
+expand = true
+
+[node name="Info" type="VBoxContainer" parent="Body/Nominiees/Nominee3"]
+margin_left = 126.0
+margin_right = 316.0
+margin_bottom = 49.0
+custom_constants/separation = -4
+
+[node name="Nome" type="Label" parent="Body/Nominiees/Nominee3/Info"]
+margin_right = 190.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+
+[node name="Turma" type="Label" parent="Body/Nominiees/Nominee3/Info"]
+margin_top = 24.0
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.713726, 0.713726, 0.713726, 1 )
+align = 1
+
+[node name="Nominee4" type="HBoxContainer" parent="Body/Nominiees"]
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 217.0
+custom_constants/separation = 19
+
+[node name="Control" type="Control" parent="Body/Nominiees/Nominee4"]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Photo" type="TextureRect" parent="Body/Nominiees/Nominee4"]
+margin_left = 59.0
+margin_right = 107.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 48, 48 )
+expand = true
+
+[node name="Info" type="VBoxContainer" parent="Body/Nominiees/Nominee4"]
+margin_left = 126.0
+margin_right = 316.0
+margin_bottom = 49.0
+custom_constants/separation = -4
+
+[node name="Nome" type="Label" parent="Body/Nominiees/Nominee4/Info"]
+margin_right = 190.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+
+[node name="Turma" type="Label" parent="Body/Nominiees/Nominee4/Info"]
+margin_top = 24.0
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.713726, 0.713726, 0.713726, 1 )
+align = 1
+
+[node name="Nominee5" type="HBoxContainer" parent="Body/Nominiees"]
+margin_top = 224.0
+margin_right = 320.0
+margin_bottom = 273.0
+custom_constants/separation = 19
+
+[node name="Control" type="Control" parent="Body/Nominiees/Nominee5"]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Photo" type="TextureRect" parent="Body/Nominiees/Nominee5"]
+margin_left = 59.0
+margin_right = 107.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 48, 48 )
+expand = true
+
+[node name="Info" type="VBoxContainer" parent="Body/Nominiees/Nominee5"]
+margin_left = 126.0
+margin_right = 316.0
+margin_bottom = 49.0
+custom_constants/separation = -4
+
+[node name="Nome" type="Label" parent="Body/Nominiees/Nominee5/Info"]
+margin_right = 190.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+
+[node name="Turma" type="Label" parent="Body/Nominiees/Nominee5/Info"]
+margin_top = 24.0
+margin_right = 190.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.713726, 0.713726, 0.713726, 1 )
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Shuffle = SubResource( 11 )

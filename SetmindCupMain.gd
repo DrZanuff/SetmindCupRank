@@ -1,8 +1,11 @@
 extends Node2D
 
-onready var nodes = [$Ranking,$Videos,$Lista]
+onready var nodes = [$Ranking,$Videos,$Lista,$News,$Destaques]
+#onready var old_nodes_order = [$Ranking,$Videos,$Lista,$News,$Destaques]
+#onready var old_nodes_order = [$Ranking,$Videos,$Lista,$News,$Destaques]
 
 func _ready():
+#	old_nodes_order = nodes
 	start_timer()
 
 func start_timer():
@@ -11,6 +14,13 @@ func start_timer():
 
 func _on_Timer_timeout():
 	$AnimationPlayer.play("FadeCross")
+
+func reset_nodes():
+	nodes[0].layer = 0
+#	nodes = old_nodes_order
+	nodes = [$Ranking,$Videos,$Lista,$News,$Destaques]
+	nodes[0].layer = 3
+	start_timer()
 
 func reorder_nodes():
 	nodes[0].layer = 0

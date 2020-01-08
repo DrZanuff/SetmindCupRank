@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://News/FontTitle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://News/Info.gd" type="Script" id=2]
+[ext_resource path="res://News/News.theme" type="Theme" id=3]
+[ext_resource path="res://News/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://News/NewsPlaceHolder.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.254902 )
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Info" type="MarginContainer"]
+margin_right = 320.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+custom_constants/margin_right = 0
+custom_constants/margin_left = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PC" type="PanelContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 360.0
+
+[node name="Panel" type="Panel" parent="PC"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 314.0
+margin_bottom = 356.0
+
+[node name="VB" type="VBoxContainer" parent="PC"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 314.0
+margin_bottom = 356.0
+
+[node name="Title" type="MarginContainer" parent="PC/VB"]
+margin_right = 308.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+
+[node name="t" type="Label" parent="PC/VB/Title"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 303.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ultricies orci. Sed egestas leo non urna rutrum, eget faucibus dolor sagittis."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Image" type="MarginContainer" parent="PC/VB"]
+margin_top = 79.0
+margin_right = 308.0
+margin_bottom = 186.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="i" type="TextureRect" parent="PC/VB/Image"]
+margin_right = 308.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Desc" type="MarginContainer" parent="PC/VB"]
+margin_top = 190.0
+margin_right = 308.0
+margin_bottom = 352.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="d" type="RichTextLabel" parent="PC/VB/Desc"]
+margin_left = 5.0
+margin_right = 303.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_constants/line_separation = 2
+text = "Nam vestibulum dui ac quam venenatis tempor. Cras ac neque leo. Donec ut neque lacus. Donec sodales velit quis velit volutpat, id lobortis magna tempor. Phasellus lorem lectus, posuere in tortor in, ultrices malesuada ipsum. Fusce leo libero, euismod quis vestibulum eu, porttitor eget elit. Curabitur in iaculis leo. Fusce ut tellus nunc. Etiam ultricies ultrices blandit. Aenean posuere eros nec nisl congue, ut lacinia eros condimentum. Sed id erat at arcu facilisis commodo."
+scroll_active = false
+
+[node name="ImageRequest" type="HTTPRequest" parent="."]
+[connection signal="request_completed" from="ImageRequest" to="." method="_on_ImageRequest_request_completed"]

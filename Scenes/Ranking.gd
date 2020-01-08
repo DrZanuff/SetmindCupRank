@@ -30,9 +30,11 @@ func _physics_process(delta):
 	$BackGround/BG.texture_offset.x += 10 * delta
 	
 	if Input.is_action_just_pressed("ui_select") and is_requesting == false:
+		owner.get_node("AnimationPlayer").play("FadeRestart")
 		$Hud/Loading.show()
 		is_requesting = true
 		$HTTPRequest.request(url)
+		
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
@@ -61,7 +63,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	
 
 func update_ranking(type):
-	$AudioStreamPlayer.play(0)
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.play_theme()
 	
 	var date = OS.get_date()
 	#SetmindCup 2020 24/02/2020
@@ -109,7 +112,6 @@ func reorder_rank(rank):
 	$Hud/Loading.hide()
 	if camera_focus != null:
 		$Camera.scroll_target(camera_focus)
-	print(camera_focus)
 
 
 func instanciate_elements(rank):
@@ -152,6 +154,5 @@ func TimerReq_time_out():
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.stop()
-	print("Acabei")
-	$AudioStreamPlayer.play_audio()
+	$AudioStreamPlayer.play_bg()
 	pass # Replace with function body.

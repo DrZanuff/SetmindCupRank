@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Matrix2.png-f573cfd49f6fccea6c9be8d992aa7e5c.stex"
+path="res://.import/BG2.jpg-2b1a8e878a776ef0c36f2086bbab9bf4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Matrix2.png"
-dest_files=[ "res://.import/Matrix2.png-f573cfd49f6fccea6c9be8d992aa7e5c.stex" ]
+source_file="res://News/BG2.jpg"
+dest_files=[ "res://.import/BG2.jpg-2b1a8e878a776ef0c36f2086bbab9bf4.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

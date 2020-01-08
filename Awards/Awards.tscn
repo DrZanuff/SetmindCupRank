@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Awards/Awards.gd" type="Script" id=1]
+[ext_resource path="res://Awards/data.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Cronus Round.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Awards/imgLoader.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+draw_center = false
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Awards" type="Node2D"]
+script = ExtResource( 1 )
+debug = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -43.0
+margin_top = -22.0
+margin_right = 1309.0
+margin_bottom = 772.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Holder" type="HBoxContainer" parent="."]
+margin_top = 120.0
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerScrollX" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="DebugCam" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1280.0
+margin_bottom = 120.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.8, 0.0117647, 1 )
+text = "Setmind Cup Awards 2019"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="imgLoader" parent="." instance=ExtResource( 4 )]
+[connection signal="timeout" from="TimerScrollX" to="." method="_on_TimerScrollX_timeout"]
