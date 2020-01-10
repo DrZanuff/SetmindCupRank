@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var nodes = [$Ranking,$Videos,$Lista,$News,$Destaques]
+onready var nodes = [$Ranking,$Videos,$News,$Lista,$News,$Videos,$Destaques]
 #onready var old_nodes_order = [$Ranking,$Videos,$Lista,$News,$Destaques]
 #onready var old_nodes_order = [$Ranking,$Videos,$Lista,$News,$Destaques]
 
@@ -18,7 +18,7 @@ func _on_Timer_timeout():
 func reset_nodes():
 	nodes[0].layer = 0
 #	nodes = old_nodes_order
-	nodes = [$Ranking,$Videos,$Lista,$News,$Destaques]
+	nodes = [$Ranking,$Videos,$News,$Lista,$News,$Videos,$Destaques]
 	nodes[0].layer = 3
 	start_timer()
 

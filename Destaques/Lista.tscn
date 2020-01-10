@@ -3,12 +3,12 @@
 [ext_resource path="res://Art/Prototype.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 45
 use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 18
+size = 35
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -30,14 +30,14 @@ __meta__ = {
 }
 
 [node name="ReferenceRect2" type="ReferenceRect" parent="VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 24.0
+margin_right = 1280.0
+margin_bottom = 36.0
 size_flags_vertical = 3
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 28.0
-margin_right = 1024.0
-margin_bottom = 76.0
+margin_top = 40.0
+margin_right = 1280.0
+margin_bottom = 148.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -46,7 +46,7 @@ custom_colors/font_color_shadow = Color( 0.984314, 0.458824, 0.0784314, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 1
-text = "Categorias
+text = "Categorias de Destaque Setmind Cup 2020
 "
 align = 1
 valign = 1
@@ -54,31 +54,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lista" type="Label" parent="VBoxContainer"]
-margin_top = 80.0
-margin_right = 1024.0
-margin_bottom = 571.0
+[node name="HB" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 152.0
+margin_right = 1280.0
+margin_bottom = 680.0
+
+[node name="Lista1" type="Label" parent="VBoxContainer/HB"]
+margin_right = 638.0
+margin_bottom = 528.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
+custom_constants/line_spacing = 12
 text = "Melhor Jogo	
 Melhor jogo 2D
 Melhor Gameplay
 Melhor Composição Artística
 Melhor Sonografia
+Melhor Música
 Melhor Level Design
 Funcionalidade Inovadora
 Melhor Organização
-Melhor GDD
-Maior Empenho
+Melhor GDD"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lista2" type="Label" parent="VBoxContainer/HB"]
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 528.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_constants/line_spacing = 12
+text = "Maior Empenho
 Melhor Trabalho em Equipe
 Melhor Novato	
-Melhor volta por cima
-Melhor história
-Melhor abordagem do tema
+Melhor Volta por cima
+Melhor História
+Melhor Abordagem do Tema
 Melhor jogo 3D
 Melhor referência
-Melhor troca de ferramenta
+Melhor troca de Ferramenta
 Melhor Humor"
 align = 1
 valign = 1
@@ -87,7 +107,7 @@ __meta__ = {
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer"]
-margin_top = 575.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_top = 684.0
+margin_right = 1280.0
+margin_bottom = 720.0
 size_flags_vertical = 3

@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/Ranking.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Videos/Files/Video.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SetmindCupMain.gd" type="Script" id=3]
-[ext_resource path="res://Destaques/Lista.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Awards/Awards.tscn" type="PackedScene" id=5]
-[ext_resource path="res://News/News.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SetmindCupMain.gd" type="Script" id=1]
+[ext_resource path="res://News/News.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Awards/Awards.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Videos/Files/Video.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Destaques/Lista.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Ranking.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeCross"
@@ -63,7 +63,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "FadeRestart"
 length = 1.5
 tracks/0/type = "value"
@@ -93,7 +93,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 75.0
 loop = true
 tracks/0/type = "value"
@@ -158,22 +158,22 @@ tracks/4/keys = {
 }
 
 [node name="SetmindCup" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FadeOut"
 anims/FadeCross = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
-anims/FadeRestart = SubResource( 4 )
-anims/Swap = SubResource( 3 )
+anims/FadeRestart = SubResource( 3 )
+anims/Swap = SubResource( 4 )
 
 [node name="News" type="CanvasLayer" parent="."]
 layer = 0
 __meta__ = {
-"_editor_description_": "Time:60"
+"_editor_description_": "Time:45"
 }
 
-[node name="News" parent="News" instance=ExtResource( 6 )]
+[node name="News" parent="News" instance=ExtResource( 2 )]
 
 [node name="Destaques" type="CanvasLayer" parent="."]
 layer = 0
@@ -181,15 +181,15 @@ __meta__ = {
 "_editor_description_": "Time:120"
 }
 
-[node name="Awards" parent="Destaques" instance=ExtResource( 5 )]
+[node name="Awards" parent="Destaques" instance=ExtResource( 3 )]
 
 [node name="Videos" type="CanvasLayer" parent="."]
 layer = 0
 __meta__ = {
-"_editor_description_": "Time:120"
+"_editor_description_": "Time:180"
 }
 
-[node name="Videos" parent="Videos" instance=ExtResource( 2 )]
+[node name="Videos" parent="Videos" instance=ExtResource( 4 )]
 
 [node name="Lista" type="CanvasLayer" parent="."]
 layer = 0
@@ -197,7 +197,7 @@ __meta__ = {
 "_editor_description_": "Time:30"
 }
 
-[node name="Lista" parent="Lista" instance=ExtResource( 4 )]
+[node name="Lista" parent="Lista" instance=ExtResource( 5 )]
 
 [node name="Wall" type="CanvasLayer" parent="."]
 
@@ -218,13 +218,16 @@ __meta__ = {
 margin_right = 1280.0
 margin_bottom = 720.0
 stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport" type="Viewport" parent="Ranking/ViewportContainer"]
 size = Vector2( 1280, 720 )
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Ranking" parent="Ranking/ViewportContainer/Viewport" instance=ExtResource( 1 )]
+[node name="Ranking" parent="Ranking/ViewportContainer/Viewport" instance=ExtResource( 6 )]
 
 [node name="Curtain" type="CanvasLayer" parent="."]
 layer = 4

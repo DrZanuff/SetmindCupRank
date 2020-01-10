@@ -94,15 +94,19 @@ script = ExtResource( 1 )
 type = SubResource( 1 )
 
 [node name="hbox" type="HBoxContainer" parent="."]
-margin_right = 776.0
+margin_right = 1000.0
 margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Postion" type="Label" parent="hbox"]
-margin_right = 100.0
+margin_right = 154.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -113,8 +117,8 @@ align = 1
 valign = 1
 
 [node name="Logo" type="Label" parent="hbox"]
-margin_left = 104.0
-margin_right = 168.0
+margin_left = 158.0
+margin_right = 222.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 custom_styles/normal = SubResource( 4 )
@@ -127,8 +131,8 @@ texture = ExtResource( 6 )
 expand = true
 
 [node name="Turma" type="Label" parent="hbox"]
-margin_left = 172.0
-margin_right = 472.0
+margin_left = 226.0
+margin_right = 610.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 3
@@ -141,8 +145,8 @@ align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="hbox"]
-margin_left = 476.0
-margin_right = 776.0
+margin_left = 614.0
+margin_right = 1000.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 3

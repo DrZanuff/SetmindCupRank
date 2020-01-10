@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://News/NewsPlaceHolder.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+
+var link = \"https://t.tudocdn.net/506442?w=1200\"
+var link2 = \"https://img.ibxk.com.br/2020/01/10/10100505496454.jpg\"
+
+func _ready():
+	$HTTPRequest.request(link2)
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	if body.size() > 1:
+		var image = Image.new()
+		var image_error = image.load_jpg_from_buffer(body)
+		print(image_error)
+	
+		var texture = ImageTexture.new()
+		texture.create_from_image(image)
+		
+		# Assign to the child TextureRect node
+		if image_error != 43:
+			$TextureRect.texture = texture
+		
+		if image_error:
+			print(\"Erro!\")
+"
+
+[node name="TestImg" type="Node"]
+script = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 365.769
+margin_top = 111.902
+margin_right = 777.769
+margin_bottom = 425.902
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
