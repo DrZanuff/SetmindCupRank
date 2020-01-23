@@ -35,10 +35,11 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			
 			if img != null:
 				new_info.get_node("ImageRequest").request(img)
-			new_info.get_node("PC/VB/HB/Title/t").text = title
-			new_info.get_node("PC/VB/Desc/d").text = desc
+			new_info.get_node("VB/Body/TitleBody/VB/Title/t").text = title
 			new_info.hide()
+			new_info.set_time()
 			news_array.push_back(new_info)
+			
 	
 	$TimerSwap.start(15)
 
@@ -62,7 +63,9 @@ func change_news():
 	news_array[0].hide()
 	news_array.push_back(news_array[0])
 	news_array.pop_front()
+	news_array[0].set_time()
 	news_array[0].show()
+	
 
 func _on_TimerSwap_timeout():
 	$Anim.play("Swap")

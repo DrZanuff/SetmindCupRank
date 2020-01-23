@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://News/FontTitle.tres" type="DynamicFont" id=1]
 [ext_resource path="res://News/Info.gd" type="Script" id=2]
@@ -9,15 +9,19 @@
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 10.0
 content_margin_right = 10.0
-bg_color = Color( 0, 0, 0, 0.254902 )
+bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
-outline_size = 1
+size = 35
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0, 0, 0, 0.658824 )
 
 [node name="Info" type="MarginContainer"]
 anchor_right = 1.0
@@ -32,47 +36,109 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PC" type="PanelContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 
-[node name="Panel" type="Panel" parent="PC"]
-margin_left = 6.0
-margin_top = 4.0
-margin_right = 1274.0
-margin_bottom = 716.0
+[node name="VB" type="VBoxContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
 
-[node name="VB" type="VBoxContainer" parent="PC"]
-margin_left = 6.0
-margin_top = 4.0
-margin_right = 1274.0
-margin_bottom = 716.0
-
-[node name="HB" type="HBoxContainer" parent="PC/VB"]
-margin_right = 1268.0
-margin_bottom = 442.0
+[node name="Image" type="MarginContainer" parent="VB"]
+margin_right = 1280.0
+margin_bottom = 409.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/margin_top = 0
 
-[node name="Title" type="MarginContainer" parent="PC/VB/HB"]
-margin_right = 561.0
-margin_bottom = 442.0
+[node name="i" type="TextureRect" parent="VB/Image"]
+margin_right = 1280.0
+margin_bottom = 409.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.8
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
 
-[node name="t" type="Label" parent="PC/VB/HB/Title"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 556.0
-margin_bottom = 442.0
+[node name="Body" type="VBoxContainer" parent="VB"]
+margin_top = 413.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="TitleBody" type="MarginContainer" parent="VB/Body"]
+margin_right = 1280.0
+margin_bottom = 307.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+custom_constants/margin_right = 100
+custom_constants/margin_top = 20
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 20
+
+[node name="VB" type="VBoxContainer" parent="VB/Body/TitleBody"]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 1180.0
+margin_bottom = 287.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+
+[node name="Header" type="MarginContainer" parent="VB/Body/TitleBody/VB"]
+margin_right = 1080.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="ColorRect" type="ColorRect" parent="VB/Body/TitleBody/VB/Header"]
+margin_right = 1080.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.827451, 0.32549, 0.027451, 0.764706 )
+
+[node name="Time" type="Label" parent="VB/Body/TitleBody/VB/Header"]
+margin_right = 1080.0
+margin_bottom = 53.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "9:30"
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Title" type="MarginContainer" parent="VB/Body/TitleBody/VB"]
+margin_top = 52.0
+margin_right = 1080.0
+margin_bottom = 267.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+
+[node name="t" type="Label" parent="VB/Body/TitleBody/VB/Title"]
+margin_right = 1080.0
+margin_bottom = 215.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -85,50 +151,6 @@ align = 1
 valign = 1
 autowrap = true
 clip_text = true
-
-[node name="Image" type="MarginContainer" parent="PC/VB/HB"]
-margin_left = 565.0
-margin_right = 1268.0
-margin_bottom = 442.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_top = 20
-
-[node name="i" type="TextureRect" parent="PC/VB/HB/Image"]
-margin_top = 20.0
-margin_right = 703.0
-margin_bottom = 442.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 5 )
-expand = true
-stretch_mode = 6
-
-[node name="Desc" type="MarginContainer" parent="PC/VB"]
-margin_top = 446.0
-margin_right = 1268.0
-margin_bottom = 712.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
-custom_constants/margin_right = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
-
-[node name="d" type="Label" parent="PC/VB/Desc"]
-margin_left = 5.0
-margin_right = 1263.0
-margin_bottom = 261.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 3
-text = "Nam vestibulum dui ac quam venenatis tempor. Cras ac neque leo. Donec ut neque lacus. Donec sodales velit quis velit volutpat, id lobortis magna tempor. Phasellus lorem lectus, posuere in tortor in, ultrices malesuada ipsum. Fusce leo libero, euismod quis vestibulum eu, porttitor eget elit. Curabitur in iaculis leo. Fusce ut tellus nunc. Etiam ultricies ultrices blandit. Aenean posuere eros nec nisl congue, ut lacinia eros condimentum. Sed id erat at arcu facilisis commodo."
-valign = 1
-autowrap = true
 
 [node name="ImageRequest" type="HTTPRequest" parent="."]
 [connection signal="request_completed" from="ImageRequest" to="." method="_on_ImageRequest_request_completed"]

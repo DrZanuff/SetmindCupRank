@@ -10,4 +10,10 @@ func _on_ImageRequest_request_completed(result: int, response_code: int, headers
 			var texture = ImageTexture.new()
 			texture.create_from_image(image)
 			# Assign to the child TextureRect node
-			$PC/VB/HB/Image/i.texture = texture
+			$VB/Image/i.texture = texture
+
+
+func set_time():
+	var date = OS.get_datetime()
+	var time = str(date.get("hour") , ":" , date.get("minute") )
+	$VB/Body/TitleBody/VB/Header/Time.text = time
