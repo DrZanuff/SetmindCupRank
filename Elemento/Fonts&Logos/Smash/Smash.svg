@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="SmashBrawlers.svg"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   id="svg1633"
+   version="1.1"
+   viewBox="0 0 135.46666 135.46666"
+   height="512"
+   width="512">
+  <defs
+     id="defs1627" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-height="700"
+     inkscape:window-width="1366"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="247.27608"
+     inkscape:cx="158.45432"
+     inkscape:zoom="0.7"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata1630">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Camada 1">
+    <path
+       transform="scale(0.26458333)"
+       d="M 258.67188 7.8710938 A 241.98847 241.98847 0 0 0 16.683594 249.85938 A 241.98847 241.98847 0 0 0 258.67188 491.84766 A 241.98847 241.98847 0 0 0 500.66016 249.85938 A 241.98847 241.98847 0 0 0 258.67188 7.8710938 z M 258.57227 20.214844 A 229.64575 229.64575 0 0 1 258.67188 20.214844 A 229.64575 229.64575 0 0 1 488.31836 249.85938 A 229.64575 229.64575 0 0 1 258.67188 479.50586 A 229.64575 229.64575 0 0 1 29.025391 249.85938 A 229.64575 229.64575 0 0 1 258.57227 20.214844 z "
+       style="fill:#ffffff;stroke-width:129.488;paint-order:markers stroke fill"
+       id="circle1680" />
+    <path
+       transform="scale(0.26458333)"
+       d="M 258.67188 37.962891 A 211.89661 211.89661 0 0 0 225.01758 40.652344 L 225.01758 264.33008 A 70.270647 70.270647 0 0 1 251.0625 291.17578 L 466.50195 291.17578 A 211.89661 211.89661 0 0 0 470.56836 249.85938 A 211.89661 211.89661 0 0 0 258.67188 37.962891 z M 153.65039 65.820312 A 211.89661 211.89661 0 0 0 46.775391 249.85938 A 211.89661 211.89661 0 0 0 50.841797 291.17578 L 127.78906 291.17578 A 70.270647 70.270647 0 0 1 153.65039 264.43945 L 153.65039 65.820312 z M 69.830078 345.97656 A 211.89661 211.89661 0 0 0 153.65039 433.89844 L 153.65039 385.40234 A 70.270647 70.270647 0 0 1 122.38477 345.97656 L 69.830078 345.97656 z M 256.4668 345.97656 A 70.270647 70.270647 0 0 1 225.01758 385.50977 L 225.01758 459.06641 A 211.89661 211.89661 0 0 0 258.67188 461.75586 A 211.89661 211.89661 0 0 0 447.51367 345.97656 L 256.4668 345.97656 z "
+       style="fill:#ffffff;stroke-width:113.386;paint-order:markers stroke fill"
+       id="path1635" />
+  </g>
+</svg>

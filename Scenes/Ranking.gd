@@ -65,11 +65,14 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 func update_ranking(type):
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer.play_theme()
-	
+	var instance_last_year = false
 	var date = OS.get_date()
-	#SetmindCup 2020 24/02/2020
-	
-	if date.month <= 2 and date.day < 23: 
+
+	#SetmindCup 2020 10/02/2020
+	instance_last_year = OS.get_unix_time() < 1581321600
+#	instance_last_year = OS.get_unix_time() < 1579507200
+
+	if instance_last_year:
 		if type == 0:
 			instanciate_elements(last_year_rank)
 		if type == 1:
@@ -80,7 +83,8 @@ func update_ranking(type):
 			instanciate_elements(ranking)
 		if type == 1:
 			reorder_rank(new_ranking)
-	
+
+
 func reorder_rank(rank):
 	new_ranking = rank
 	var camera_focus

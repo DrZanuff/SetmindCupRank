@@ -16,7 +16,6 @@ export var shuffle = "shuffle"
 var shuffle_time = 0
 var shuffle_interval = 0.04
 
-
 func _physics_process(delta):
 	if global_position.y != element_ranking_pos:
 		acc = lerp(acc+0.09,speed,0.02)

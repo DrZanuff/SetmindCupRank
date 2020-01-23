@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Elemento/Fonts&Logos/Smash/Smash.svg" type="Texture" id=1]
+[ext_resource path="res://Elemento/Fonts&Logos/Smash/Smash.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Elemento/Emblem_Class/Emblem.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[resource]
+script = ExtResource( 3 )
+logo = ExtResource( 1 )
+font = SubResource( 1 )
+font_size = 34.0
+color1 = Color( 1, 0.188235, 0, 1 )
+color2 = Color( 0, 0, 0, 1 )
