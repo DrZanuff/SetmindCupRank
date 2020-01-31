@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SetmindCupMain.gd" type="Script" id=1]
 [ext_resource path="res://News/News.tscn" type="PackedScene" id=2]
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
+"args": [ "reorder" ],
 "method": "reorder_nodes"
 } ]
 }
@@ -85,11 +85,44 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
+"args": [ "reset" ],
+"method": "reorder_nodes"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeSwitch"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Curtain/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "type" ],
+"method": "reorder_nodes"
+}, {
 "args": [  ],
-"method": "reset_nodes"
+"method": "start_scene"
 } ]
 }
 
@@ -165,6 +198,7 @@ autoplay = "FadeOut"
 anims/FadeCross = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 anims/FadeRestart = SubResource( 3 )
+anims/FadeSwitch = SubResource( 5 )
 anims/Swap = SubResource( 4 )
 
 [node name="News" type="CanvasLayer" parent="."]
@@ -237,7 +271,13 @@ margin_left = -247.0
 margin_top = -243.0
 margin_right = 1448.0
 margin_bottom = 913.0
-color = Color( 0, 0, 0, 0.875 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="HttpGetTimers" type="HTTPRequest" parent="."]
+__meta__ = {
+"_editor_description_": "Este node pega os timers da Planilha do Google"
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="request_completed" from="HttpGetTimers" to="." method="_on_HttpGetTimers_request_completed"]

@@ -22,6 +22,9 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 	
 	clear_news()
 	
+	if $Main/Body/News.get_child_count() > 0:
+		$Main/Body/News.get_child(0).queue_free()
+	
 	for i in range(n):
 		var title = json.articles[i].title
 		var img = json.articles[i].urlToImage
@@ -40,12 +43,13 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			new_info.set_time()
 			news_array.push_back(new_info)
 			
-	
+	$OverCurtain/Fade.play("FadeOut")
 	$TimerSwap.start(15)
 
 func _on_Timer_timeout() -> void:
-	get_news()
 	$TimerSwap.stop()
+	$OverCurtain/Fade.play("FadeIn")
+	get_news()
 
 func get_news():
 	$HTTPRequest.request(link[0]+key)
@@ -69,3 +73,4 @@ func change_news():
 
 func _on_TimerSwap_timeout():
 	$Anim.play("Swap")
+

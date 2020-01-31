@@ -14,6 +14,8 @@ var new_req_time = 20 #Tempo do novo request
 
 var is_requesting = false
 
+signal rank_ready
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Hud/Button_Req.connect("pressed",self,"btn_req_pressed")
@@ -116,6 +118,8 @@ func reorder_rank(rank):
 	$Hud/Loading.hide()
 	if camera_focus != null:
 		$Camera.scroll_target(camera_focus)
+	
+	emit_signal("rank_ready")
 
 
 func instanciate_elements(rank):
@@ -143,6 +147,8 @@ func instanciate_elements(rank):
 	type_of_connection = 1
 	#Inicia o Timer para fazer novas requests com o passar do tempo
 #	$TimerReq.start(new_req_time)
+	
+	emit_signal("rank_ready")
 
 func TimerPos_time_out():
 	if $Camera.type == "idle":

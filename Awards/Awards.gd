@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if scrolling:
 		scroll_x(delta)
 	
-	if Input.is_action_just_pressed("ui_select") and !scrolling:
+	if Input.is_action_just_pressed("ui_right") and !scrolling:
 		start_scroll()
 
 func scroll_x(delta):
