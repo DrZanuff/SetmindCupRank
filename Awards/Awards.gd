@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 export (bool)var debug = false
 var window_x = 1280

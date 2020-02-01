@@ -29,7 +29,7 @@ func btn_req_pressed():
 	$HTTPRequest.request(url)
 
 func _physics_process(delta):
-	$BackGround/BG.texture_offset.x += 10 * delta
+#	$BackGround/BG.texture_offset.x += 10 * delta
 	
 	if Input.is_action_just_pressed("ui_select") and is_requesting == false:
 		owner.get_node("AnimationPlayer").play("FadeRestart")
