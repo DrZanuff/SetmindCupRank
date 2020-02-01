@@ -138,12 +138,6 @@ position = Vector2( 1147.37, 680.743 )
 [node name="BackGround" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="BG_" type="Polygon2D" parent="BackGround"]
-visible = false
-texture = ExtResource( 4 )
-texture_offset = Vector2( 0, 9.77 )
-polygon = PoolVector2Array( -25.432, -25.3654, 1295.05, -15.8953, 1301.87, 736.161, -20.4774, 738.433 )
-
 [node name="BG" type="TextureRect" parent="BackGround"]
 material = SubResource( 5 )
 anchor_right = 1.0
@@ -199,7 +193,7 @@ position = Vector2( 101.302, 64.923 )
 scale = Vector2( 0.0728836, 0.0728836 )
 texture = ExtResource( 7 )
 
-[node name="Ranking" type="Node" parent="."]
+[node name="Ranking" type="Node2D" parent="."]
 
 [node name="TimerPos" type="Timer" parent="."]
 
