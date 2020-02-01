@@ -174,10 +174,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Light2D" type="Light2D" parent="Art"]
-position = Vector2( 633.316, 104.288 )
+[node name="Light2D" type="Light2D" parent="Art/Title"]
+position = Vector2( 633.316, 23.288 )
 rotation = -1.57079
-scale = Vector2( 0.0345664, 388.331 )
+scale = Vector2( 0.0345664, 1879.46 )
 texture = SubResource( 8 )
 
 [node name="Pos" type="Sprite" parent="."]
