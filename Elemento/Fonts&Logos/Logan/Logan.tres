@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Elemento/Emblem_Class/Emblem.gd" type="Script" id=1]
+[ext_resource path="res://Elemento/Fonts&Logos/Logan/Logan.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Elemento/Fonts&Logos/Logan/Logan.svg" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[resource]
+script = ExtResource( 1 )
+logo = ExtResource( 3 )
+font = SubResource( 1 )
+font_size = 55.0
+color1 = Color( 0, 0.0235294, 0.580392, 1 )
+color2 = Color( 1, 0.796078, 0, 1 )
