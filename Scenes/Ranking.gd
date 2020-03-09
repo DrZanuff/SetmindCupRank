@@ -1,6 +1,6 @@
 extends Node
 
-var url = "https://script.google.com/macros/s/AKfycbzKSxdOCm3jN4PXgC8n2FszkF0ZCvBCPDEC7zTifOQXU81ecMw/exec"
+var url = "https://script.google.com/a/setmind.com.br/macros/s/AKfycby4h1_nt9QM5-IlEeAo7WdpqBLpIKHSnN7FHGRs/exec"
 #var url = "http://www.json-generator.com/api/json/get/ceIHFlusjm?indent=2"
 var type_of_connection = 0
 var ranking #Updated Ranking
