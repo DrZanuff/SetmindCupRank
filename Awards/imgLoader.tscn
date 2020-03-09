@@ -18,7 +18,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 84.0003
+margin_right = 84.001
 margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -20,6 +20,9 @@ font_data = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 debug = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -55,7 +58,7 @@ margin_bottom = 82.0
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.8, 0.0117647, 1 )
-text = "Setmind Cup Awards 2019"
+text = "Setmind Cup Awards 2020"
 align = 1
 valign = 1
 __meta__ = {
